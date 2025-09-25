@@ -1,5 +1,12 @@
 function findElement(arr, func) {
-
+  // loop through elements of the array
+  for (const e in arr) {
+    // pass the element into the function
+    // return the value if true
+    if (func(arr[e])) {
+      return arr[e];
+    };
+  };
 };
 
 // test cases
