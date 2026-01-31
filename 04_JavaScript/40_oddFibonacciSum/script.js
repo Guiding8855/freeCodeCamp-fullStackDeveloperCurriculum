@@ -36,3 +36,32 @@ console.log(sumFibs(4000000)); // expected result: 4613732 - pass;
 console.log(sumFibs(4)); // expected result: 5 - pass;
 console.log(sumFibs(75024)); // expected result: 60696 - pass;
 console.log(sumFibs(75025)); // expected result: 135721 - pass;
+
+// With some help from ChatGPT to refine the above, you can also do it this way:
+
+function sumFibs(num) {
+  // Starting with the first two Fibonacci series numbers
+  let prev = 0;
+  let curr = 1;
+  let sum = 0;
+
+  // while the current fibonacci series number is less than the number input
+  while (curr <= num) {
+    // if the current fibonacci number is odd, add it to the sum
+    if (curr % 2 !== 0) {
+    sum += curr;
+    }
+    // move the fibonacci series numbers along
+    [prev, curr] = [curr, prev + curr];
+  };
+
+  return sum;
+};
+
+// test cases
+console.log(sumFibs(1)); // expected result: 2 - pass;
+console.log(sumFibs(1000)); // expected result: 1785 - pass;
+console.log(sumFibs(4000000)); // expected result: 4613732 - pass;
+console.log(sumFibs(4)); // expected result: 5 - pass;
+console.log(sumFibs(75024)); // expected result: 60696 - pass;
+console.log(sumFibs(75025)); // expected result: 135721 - pass;
